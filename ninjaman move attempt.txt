@@ -1,0 +1,25 @@
+document.onkeydown = function(e){
+			console.log(e);
+        var leftValue = 80, topValue = 80, move = 10;
+        
+        function update(){
+            document.getElementById("ninjaman").style.left = leftValue  + "px";
+            document.getElementById("ninjaman").style.top = topValue + "px";
+        }
+            if(e.keyCode == 65 && leftValue>=10) {// Left A
+				leftValue -= move;
+				direction='left';
+			}
+			else if(e.keyCode == 68 && leftValue<=800){//Right  D
+				leftValue += move;	
+				direction='right';
+			} 
+			else if(e.keyCode == 83 && topValue<=800){// Down S
+				topValue += move;	
+				direction='down';
+			}
+			else if(e.keyCode == 87 && topValue>=20){// Up W
+				topValue -= move;
+				direction='top';
+			}			
+        }
